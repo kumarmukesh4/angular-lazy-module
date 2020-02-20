@@ -6,7 +6,10 @@ Structuring angular app with feature module using Lazy Load feature
   - Feature module are differ with root module, as feature module don't have 'BrowserModule' import which only imported once in root module
   - Commonn module: It contribute many common directive to app template like ngFor, ngIf
 # Creating simple moduel
-  - ng generate module SharedModule
+  - ng generate module SharedModule   <br />
+      or <br />
+    ng generate module shared --module app.module <br />
+    the above command will create the module and make entry into app-module
 ```
  import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,3 +28,29 @@ export class CustomerDashboard { }
  import { SharedModule } from './shared/shared.module';
  ```
  
+ # Creating Feature moduel
+    - ng generate module module/user --route user --module app.module
+    - Above commond will create user module under module folder, create it's route and make entry of module in app-module
+    - Child component will be imported and route accordingly inside route file
+
+```
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { UserRoutingModule } from './user-routing.module';
+import { UserComponent } from './user.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ViewUserDetailComponent } from './view-user-detail/view-user-detail.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+
+
+@NgModule({
+  declarations: [UserComponent, AddUserComponent, ViewUserDetailComponent, EditUserComponent],
+  imports: [
+    CommonModule,
+    UserRoutingModule
+  ]
+})
+export class UserModule { }
+
+```
