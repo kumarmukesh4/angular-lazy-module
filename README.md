@@ -6,7 +6,7 @@ Structuring angular app with feature module using Lazy Load feature
   - Feature module are differ with root module, as feature module don't have 'BrowserModule' import which only imported once in root module
   - Commonn module: It contribute many common directive to app template like ngFor, ngIf
 # Creating simple moduel
-  - ng generate module CustomerDashboard
+  - ng generate module SharedModule
 ```
  import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,4 +17,11 @@ import { CommonModule } from '@angular/common';
   ],
   declarations: []
 })
+export class CustomerDashboard { }
 ```
+ - Create header, footer, sideNav, directive, pipes etc and import and export same in sharedModule
+ - Finally import `SharedModule` in app-module in Import array
+ ```
+ import { SharedModule } from './shared/shared.module';
+ ```
+ 
