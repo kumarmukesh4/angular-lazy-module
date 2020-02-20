@@ -29,7 +29,8 @@ export class CustomerDashboard { }
  ```
  
  # Creating Feature moduel
-    - ng generate module module/user --route user --module app.module
+    ng generate module module/user --route user --module app.module <br />
+      
     - Above commond will create user module under module folder, create it's route 
     - It will also make entry of module in app-module
     - Child component will be imported and route accordingly inside route file
