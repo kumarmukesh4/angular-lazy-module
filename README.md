@@ -5,6 +5,8 @@ Structuring angular app with feature module using Lazy Load feature
   - To view the feature module component, it need to export the component in the export array in feature module
   - Feature module are differ with root module, as feature module don't have 'BrowserModule' import which only imported once in root module
   - Commonn module: It contribute many common directive to app template like ngFor, ngIf
+# Creating simple moduel
+  - ng generate module CustomerDashboard
 ```
  import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
